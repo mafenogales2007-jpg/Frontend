@@ -4,6 +4,7 @@ import { authApi, getStoredUser, clearSessionData } from './services/api';
 import VentasMain from './components/ventas/VentasMain';
 import InventarioMain from './components/inventario/InventarioMain';
 import ReportesMain from './components/reportes/ReportesMain';
+import RuletaPremiosMain from './components/ruleta/RuletaPremiosMain';
 import Login from './components/login/Login';
 import './css/ventas.css';
 
@@ -84,6 +85,23 @@ function Sidebar({ session, onLogout }) {
           <path d="M18 17V9"/>
           <path d="M13 17V5"/>
           <path d="M8 17v-3"/>
+        </svg>
+      )
+    },
+    {
+      path: '/ruleta',
+      label: 'Ruleta de premios',
+      icon: (
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 5.2 10.2 2h3.6Z"/>
+          <circle cx="12" cy="13.5" r="8.2"/>
+          <circle cx="12" cy="13.5" r="2"/>
+          <path d="M12 11.5V5.3"/>
+          <path d="M12 15.5v6.2"/>
+          <path d="m13.73 12.5 5.37-3.1"/>
+          <path d="m13.73 14.5 5.37 3.1"/>
+          <path d="m10.27 14.5-5.37 3.1"/>
+          <path d="m10.27 12.5-5.37-3.1"/>
         </svg>
       )
     }
@@ -376,6 +394,7 @@ export default function App() {
             <Route path="/ventas" element={<VentasMain />} />
             <Route path="/inventario" element={<InventarioMain />} />
             <Route path="/reportes" element={<ReportesMain />} />
+            <Route path="/ruleta" element={<RuletaPremiosMain />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </main>
